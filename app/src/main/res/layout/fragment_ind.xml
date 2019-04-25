@@ -17,7 +17,7 @@
         android:dropDownHeight="160dp"
         android:hint="@string/ketikan_kata_on_frag_id"
         android:maxLines="1"
-        android:imeOptions=""
+        android:imeOptions="actionDone"
         android:id="@+id/search_indonesia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

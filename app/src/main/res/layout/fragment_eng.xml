@@ -16,6 +16,7 @@
         android:layout_marginEnd="16dp"
         android:hint="@string/type_something_on_frag_eng"
         android:maxLines="1"
+
         android:dropDownHeight="160dp"
         android:id="@+id/search_english"
         android:layout_width="match_parent"
