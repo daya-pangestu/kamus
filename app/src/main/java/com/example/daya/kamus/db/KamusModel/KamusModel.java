@@ -54,7 +54,7 @@ public class KamusModel implements Parcelable {
         dest.writeString(this.TRANSLATE);
     }
 
-    protected KamusModel(Parcel in) {
+    private KamusModel(Parcel in) {
         this.id = in.readInt();
         this.WORD = in.readString();
         this.TRANSLATE = in.readString();

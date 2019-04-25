@@ -8,13 +8,14 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 public class DetailActivity extends AppCompatActivity {
-TextView detailKata, detailTerjemahan;
+    private TextView detailKata;
+    private TextView detailTerjemahan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar()!= null)getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         detailKata = findViewById(R.id.detail_kata);
         detailTerjemahan = findViewById(R.id.detail_terjemahan);

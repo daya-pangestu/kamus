@@ -35,8 +35,8 @@ import static android.support.constraint.Constraints.TAG;
  */
 public class IndFragment extends Fragment {
 
-    AutoCompleteTextView search_indonesia;
-    KamusHelper kamusHelper;
+    private AutoCompleteTextView search_indonesia;
+    private KamusHelper kamusHelper;
     public IndFragment() {
         // Required empty public constructor
     }
@@ -79,7 +79,7 @@ public class IndFragment extends Fragment {
 
     }
 
-    public ArrayList<String> daftar() {
+    private ArrayList<String> daftar() {
 
         kamusHelper = new KamusHelper(getActivity());
         ArrayList<String> daftar_kata = new ArrayList<>();

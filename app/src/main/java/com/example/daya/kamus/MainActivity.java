@@ -1,7 +1,6 @@
 package com.example.daya.kamus;
 
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.design.widget.NavigationView;
@@ -17,7 +16,7 @@ import com.example.daya.kamus.tab.TabAdapter;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    ViewPager viewPager;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +25,9 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        AppBarLayout appbar = findViewById(R.id.appbarLayout);
         DrawerLayout drawer =  findViewById(R.id.drawer_layout);
+
+        //init tool
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -43,10 +43,6 @@ public class MainActivity extends AppCompatActivity
 
         TabLayout tabLayout = findViewById(R.id.tab);
         tabLayout.setupWithViewPager(viewPager);
-
-
-
-
     }
 
     @Override
@@ -59,21 +55,6 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, as long
-        // as you specified a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override

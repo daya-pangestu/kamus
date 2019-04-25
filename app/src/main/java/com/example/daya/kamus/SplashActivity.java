@@ -1,5 +1,6 @@
 package com.example.daya.kamus;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.AsyncTask;
@@ -17,8 +18,12 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.functions.Function;
+
 public class SplashActivity extends AppCompatActivity {
-    ProgressBar progressBar;
+    private ProgressBar progressBar;
 
     public static final int IDN = 100;
     public static final int ENG= 200;
@@ -32,14 +37,17 @@ public class SplashActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progress_bar_splash);
 
         new LoadKamus().execute();
+
+
     }
 
+    @SuppressLint("StaticFieldLeak")
     private class LoadKamus extends AsyncTask<Void, Integer, Void> {
         final String TAG = LoadKamus.class.getSimpleName();
         KamusHelper kamusHelper;
         AppPreferences appPreferences;
         double progres;
-        double maxProgres = 100;
+        final double maxProgres = 100;
 
         @Override
         protected void onPreExecute() {
@@ -127,7 +135,7 @@ public class SplashActivity extends AppCompatActivity {
         }
     }
 
-    public ArrayList<KamusModel> preLoadRaw(int id) {
+    private ArrayList<KamusModel> preLoadRaw(int id) {
 
         ArrayList<KamusModel> kamusModels = new ArrayList<>();
 

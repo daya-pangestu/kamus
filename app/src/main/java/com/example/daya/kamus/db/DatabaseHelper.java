@@ -12,25 +12,25 @@ import static com.example.daya.kamus.db.DatabaseContract.KamusIndonesia.TERJEMAH
 import static com.example.daya.kamus.db.DatabaseContract.TABLE_ENGLISH;
 import static com.example.daya.kamus.db.DatabaseContract.TABLE_INDONESIA;
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+class DatabaseHelper extends SQLiteOpenHelper {
 
     private static String DATABASE_NAME = "dbkamus";
     private static final int DATABASE_VERSION = 5;
 
-    public static String CREATE_TABLE_ENGLISH = "create table "+ TABLE_ENGLISH +
+    private static String CREATE_TABLE_ENGLISH = "create table "+ TABLE_ENGLISH +
             "(" + _ID + " integer primary key autoincrement, " +
             WORD + " text not null, " +
             TRANSLATE + " text not null);";
 
 
-    public static String CREATE_TABLE_INDONESIA ="create table "+ TABLE_INDONESIA+
+    private static String CREATE_TABLE_INDONESIA ="create table "+ TABLE_INDONESIA+
             "(" + _ID + " integer primary key autoincrement, " +
             KATA + " text not null, " +
             TERJEMAHAN+ " text not null);";
 
 
 
-    public DatabaseHelper(Context context) {
+    DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

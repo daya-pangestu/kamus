@@ -24,8 +24,8 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 public class EngFragment extends Fragment {
-    AutoCompleteTextView searchenglish;
-    KamusHelper kamusHelper;
+    private AutoCompleteTextView searchenglish;
+    private KamusHelper kamusHelper;
 
     public EngFragment() {
         // Required empty public constructor
@@ -58,7 +58,7 @@ public class EngFragment extends Fragment {
         });
     }
 
-    public ArrayList<String> daftar() {
+    private ArrayList<String> daftar() {
 
         ArrayList<String> daftar_kata = new ArrayList<>();
         kamusHelper = new KamusHelper(getContext());

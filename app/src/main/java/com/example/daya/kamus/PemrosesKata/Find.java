@@ -15,9 +15,9 @@ import static android.support.constraint.Constraints.TAG;
 public class Find  extends AsyncTask<String, Void, String> {
 
     private String temp;
-    private String word;
-    private String from;
-    private Context  context;
+    private final String word;
+    private final String from;
+    private final Context  context;
 
         public Find(Context activity,String word,String from) {
             this.context = activity;

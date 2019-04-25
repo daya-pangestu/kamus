@@ -24,7 +24,7 @@ import static com.example.daya.kamus.db.DatabaseContract.TABLE_INDONESIA;
 public class KamusHelper {
 
 
-    private Context context;
+    private final Context context;
     private DatabaseHelper databaseHelper;
     private SQLiteDatabase database;
 
@@ -32,10 +32,9 @@ public class KamusHelper {
         this.context = context;
     }
 
-    public KamusHelper open() throws SQLException {
+    public void open() throws SQLException {
         databaseHelper = new DatabaseHelper(context);
         database = databaseHelper.getWritableDatabase();
-        return this;
     }
 
 
@@ -55,13 +54,9 @@ public class KamusHelper {
         }
 
         cursor.moveToFirst();
-        ArrayList<KamusModel> arrayList = new ArrayList<>();
-        KamusModel kamusmodelenglish;
 
         if (cursor.getCount() > 0) {
             do {
-                kamusmodelenglish = new KamusModel();
-
                 String sWord = null;
                 String sTranslate = null;
 
